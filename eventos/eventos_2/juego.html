@@ -21,11 +21,15 @@
     }
     .row{
         width: 100%;
-        height: 30%;
+        height: 23.5%;
         display: flex;
         justify-content: space-around;
     }
+    #title{
+        height: 10%;
+    }
     .carta{
+        height: 95%;
         width: 25%;
         background-image: url("tile.jpg");
         background-repeat: repeat;
@@ -33,10 +37,27 @@
         border-radius: 10px;
         background-size:25em;
     }
+    h1{
+        height: 95%;
+        width: 85%;
+        background-color: white;
+        border: 4px white solid;
+        border-radius: 10px;
+        margin: 0;
+    }
+    p{
+        width: 100%;
+        height: 100%;
+        font-size: 3vw;
+        text-align: center;
+    }
 
 </style>
 <body>
     <main>
+        <div class="row" id="title">    
+            <h1>Encuentra: </h1>
+        </div>
         <div class="row">    
             <div class="carta">
                 <p>&nbsp</p>
