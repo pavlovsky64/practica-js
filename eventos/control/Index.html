@@ -1,16 +1,48 @@
 <script>
+	let posX 
+	let posY
+	
 	function printMousePos(event) {
+		posX = event.clientX;
+		posY = event.clientY;
   		alert(
     			"clientX: " + event.clientX +
     			" - clientY: " + event.clientY
 		);
+
+		//botones
+		setButton(468, 160, 18, "boton rojo");
+		setButton(434, 127, 18, "boton amarillo");
+		setButton(398, 160, 18, "boton azul");
+		setButton(434, 197, 18, "boton verde");
+
+		//D-pad
+		setButton(120, 160, 18, "D-pad izquierda");
+		setButton(150, 128, 18, "D-pad arriba");
+		setButton(182, 160, 18, "D-pad derecha");
+		setButton(150, 193, 18, "D-pad abajo");
+
+		//Joystick
+		setButton(220, 227, 34, "joystick izquierdo");
+		setButton(365, 227, 34, "joystick derecho");
+
+		//options
+		setButton(254, 153, 14, "select");
+		setButton(328, 153, 14, "start");
 	}
-	function area(event){
-		const distX = event.clientX;
-		const distY = event.clientY;
-	}
-	function setButton(x, y, radiusLen){
-		//return 
+
+	function setButton(xButton, yButton, radiusLen, name){
+	
+		const xDifference = posX-xButton;
+		const yDifference = posY-yButton;
+		const dist= Math.sqrt((xDifference)**2 + (yDifference)**2);
+		if(dist <= radiusLen){
+			alert("se presiono el "+name)
+			return true;
+		}
+		else{
+			return false;
+		} 
 	}
 
 	document.addEventListener("click", printMousePos);
